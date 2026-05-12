@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Google Images URL Copier",
+  "version": "1.0.0",
+  "description": "Copie automatiquement l'URL de l'image sur laquelle tu cliques dans Google Images",
+  "permissions": [
+    "storage",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "https://www.google.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.google.com/search*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Google Images URL Copier"
+  }
+}
