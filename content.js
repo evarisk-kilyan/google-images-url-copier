@@ -55,6 +55,8 @@ document.addEventListener('click', (e) => {
   const url = img.src;
   if (!url || url.startsWith('data:')) return;
 
+  e.preventDefault();
+  e.stopPropagation();
   copyText(url);
   showToast('✓ Copié !\n' + url.slice(0, 80) + (url.length > 80 ? '…' : ''));
 }, true);
